@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block title %}
+userform
+{% endblock %}
+{% block content %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+$(document).ready(function(){
+    $('#uform').submit(function(e){
+        e.preventDefault()
+        var EmailAddress =$(".EmailAddress").val()
+        var Passwordp = $('.Passwordp').val()
+        $.get("http://127.0.0.1:8000//",{EmailAddress:EmailAddress,Passwordp:Passwordp}).done(function(data)
+        {
+            $("body").html(data)
+            alert('success')
+        });
+    });
+
+});
+
+
+
+
+
+</script>
+
+
+
+
+{% load static %}
+<!-- CSS  -->
+<link rel="stylesheet" type="text/css" href="{%static 'css/home.css' %}">
+<link rel="stylesheet" type="text/css" href="{%static 'css/userform.css' %} ">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <title>userform</title>
+</head>
+<body>
+    
+
+
+
+   
+
+<div class="bg-img 
+            background-image:url({%static 'media/farm4'})">
+    <div class="login-header ">
+        <p>LOGIN</p>
+    </div>
+    <div>
+    <form  class="fork container-fluid" id="uform">
+
+        <div class="input-em">
+            <label for="email"> Email Address :</label>
+            <span class="ema-inp ">
+                <input type="email" placeholder="Email"  class="border border-3 rounded-pill EmailAddress" required>
+            </span>
+        </div>
+        <div class="input-pas">
+            <label for="password">Password :</label>
+            <input type="password" placeholder="Password" class="border border-3 rounded-pill Passwordp" required>
+
+            <div class="not">
+                <p>Not Registered ? <a href="\regform" class="ca">Sign.Up</a></p>
+            </div>
+            
+            <span class="" style="margin-left: 7cm; font-size:23px;">Forgot <a href="/cpass">password?</a></span>
+        </div>
+        <div class="buttod ">
+            <input type="submit" class="btn btn-lg  butto" value="SUBMIT">
+        </div>
+
+    </form>
+    
+</div>
+    {% if messages %} 
+    {% for message in messages %} 
+
+    <script>
+     alert("{{ message }}");
+    </script>
+    {% endfor %} 
+    {% endif %}
+
+</body>
+</html>
+
+
+
+
+{% endblock %}

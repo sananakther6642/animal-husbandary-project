@@ -1,0 +1,49 @@
+
+/* -------------FONT LINKS------------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+/* -----------------------------------------------------------------------------------------------*/
+
+
+
+.navbar-az{
+    float: right;
+    padding-top: 1cm;
+    padding-right: 0cm;
+      
+      
+   }
+.sa{
+    text-decoration: none;
+}
+
+.pic1{
+    padding-top: 53px;
+    /* background-image: url(/images/Farm1.jpg); */
+    padding-bottom: 1cm;
+    background-size: 37cm;
+    background-repeat: no-repeat;
+
+}
+.headl{
+    padding-top: 0px;
+    color:black;
+    font-size: 55px;
+    font-style:italic;
+    font-family: 'Abril Fatface', cursive;
+    align-content: center;
+
+}
+#pds{
+    color: black;
+}
+.aboul{
+    color: black;
+    font-family:'Yanone Kaffeesatz', sans-serif;
+    font-weight:bold;
+    font-size: 25px;
+    padding-bottom: 0%;
+}

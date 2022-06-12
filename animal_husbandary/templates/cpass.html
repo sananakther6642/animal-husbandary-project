@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block title %}
+
+{% endblock %}
+{% block content %}
+{%load static %}
+<!DOCTYPE html>
+<html>
+<title>OTP</title>
+<meta name="viewport" content="width=device-width, initial-scale=0.3">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+     /* $.ajaxSetup({
+            headers:
+            { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });*/
+    $(document).ready(function(){
+        $("#b1").click(function()
+        {
+                email=$("#email").val();
+                $.get( "http://127.0.0.1:8000/getotp", {email:email}).done(function(data) 
+             {
+                 alert("OTP sent to registered email")
+             });
+
+        });
+        $("#f").submit(function(e)
+        {
+            e.preventDefault();
+            email=$("#email").val();
+            rotp=$("#rotp").val();
+            npsw=$("#npsw").val()
+             //alert(tit)
+             $.get( "http://127.0.0.1:8000/changepass", {email:email,rotp:rotp,npsw:npsw }).done(function(data) 
+             {
+                alert(data)
+             });
+        });
+    });
+    </script>
+<body>
+ <br>
+<br>
+<br>
+<br>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+</style>
+<div class="w3-container" style="width:70%;margin-left: 5%;" id="subs">
+ <div style="padding-left: 3cm;"> 
+ <h2 style="font-size:1.5cm;padding-left:4cm; font-family:'Bebas Neue', cursive;">CLICK THE BELOW BUTTON TO CHANGE </h2><h1 style="font-size:1.5cm;padding-left:9.5cm; font-family:'Bebas Neue', cursive;">PASSWORD</h1><br>
+  <div class="h" style="margin-left: 4cm;">
+  <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-dark w3-hover-orange " style="padding-left: 7cm; padding-right:7cm;font-size:1cm;font-family:Georgia, 'Times New Roman', Times, serif; border-radius:2cm;">Login</button>
+ </div>
+ </div>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close">&times;</span>
+        <img src="{%static 'media/user_icon_004.webp' %}" alt="Avatar" style="width:19%" class="w3-circle w3-margin-top">
+      </div>
+
+      <form class="w3-container"  id="f">
+        <div class="w3-section">
+          <label><b>Email :</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" style="border-radius: 2cm;" type="email" placeholder="Enter Registered Email ID" name="email" id="email" required>
+          <button class="btn btn-dark w3-hover-red w3-block  w3-section w3-padding" style="background-color: black; border-radius:20px;" type="button" id="b1">GET OTP</button>
+          <label><b>OTP :</b></label>
+          <input class="w3-input w3-border" style="border-radius: 2cm;" type="text" placeholder="Enter OTP received" name="rotp" id="rotp" required>
+          <label><b>Password :</b></label>
+          <input class="w3-input w3-border" style="border-radius: 2cm;" type="password" placeholder="Enter New Password" name="npsw" id="npsw" required>
+          <button class="btn btn-dark w3-hover-red w3-block  w3-section w3-padding " style="background-color: black; border-radius:20px;" type="submit">Change Password</button>
+         
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="btn btn-dark w3-hover-orange ">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</body>
+
+</html>
+
+{% endblock %}

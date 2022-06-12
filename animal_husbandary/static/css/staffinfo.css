@@ -1,0 +1,37 @@
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+form.example button {
+  float: left;
+  padding-right: 2cm;
+  width: 20%;
+  height: 1.3cm;
+  padding: 10px;
+  background: #000000;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #d30000;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.sea{
+
+
+}

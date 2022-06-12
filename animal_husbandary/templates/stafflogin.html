@@ -1,0 +1,80 @@
+{% extends "layout1.html" %}
+{% block title %}
+stafflogin
+{% endblock %}
+{% block content %}
+{% load static %}
+
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <!-- <meta name="viewport" content="height=device-height, initial-scale=0.2"> -->
+
+<!-- CSS  -->
+
+<link rel="stylesheet" type="text/css" href="{%static "css/home.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "css/staffform.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "css/userform.css" %}">
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("#sform").submit(function(e){
+ e.preventDefault();
+ emai=$(".emai").val()
+ psw=$(".psw").val()
+
+ $.get("http://127.0.0.1:8000/stlog",{emai:emai,psw:psw}).done(function(data)
+{
+$("body").html(data)
+alert('success')
+ });
+
+});
+});
+
+</script>
+<body>
+<div class="bg-img 
+            background-image:url({%static 'media/farm4'})">
+    <div class="login-header ">
+        <p style="margin-right:4cm; margin-left:-4cm;"> STAFF LOGIN</p>
+    </div>
+    <div>
+    <form  class="fork container-fluid" id="sform">
+
+        <div class="input-em">
+            <label for="email"> Email Address :</label>
+            <span class="ema-inp ">
+                <input type="email" placeholder="Email"  class="border border-3 rounded-pill emai" required>
+            </span>
+        </div>
+        <div class="input-pas">
+            <label for="password">Password :</label>
+            <input type="password" placeholder="Password" class="border border-3 rounded-pill psw" required>
+
+           
+        </div>
+        <div class="buttod ">
+            <input type="submit" class="btn btn-lg  butto"  style="margin-top: 2cm;margin-left:20px;" value="SUBMIT">
+        </div>
+
+    </form>
+    
+</div>
+    {% if messages %} 
+    {% for message in messages %} 
+
+    <script>
+     alert("{{ message }}");
+    </script>
+    {% endfor %} 
+    {% endif %}
+
+</body>
+</html>
+
+{% endblock %}
+
+

@@ -1,0 +1,27 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap');
+
+
+
+.k{
+    padding-top: 1.5cm;
+    padding-right: 0cm;
+    padding-left: 6cm;
+    padding-bottom: 2cm;
+    font-weight: bolder;
+    font-size:20px;
+    font-family: 'Spectral', serif;
+
+}
+.sig-head{
+    font-size: 2.7cm;
+    padding-left: 2cm;
+    font-family: 'Yuji Mai', serif;
+}
+
+.butto{
+    padding-left: 10cm;
+    padding-right:11cm;
+    font-size: larger;
+}

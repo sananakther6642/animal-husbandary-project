@@ -1,0 +1,20 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap');
+
+label{
+    font-size: 30px;
+    font-family: 'Merriweather', serif;
+    
+
+}
+#header-mous{
+    font-size: 2.5cm;
+    font-family:'Yuji Syuku', serif;
+    text-align: center;
+    font-style: oblique;
+    padding-left: 4cm;
+
+}
+
+

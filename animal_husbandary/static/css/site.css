@@ -1,0 +1,55 @@
+ /* -------------FONT LINKS------------------------------------------------------------------------ */
+ @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+ @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200&display=swap');
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+ /* -----------------------------------------------------------------------------------------------*/
+ 
+
+
+.navbar-an{
+float: right;
+ padding-top: 1cm;
+ padding-right: 0cm;
+
+
+}
+.bt6{
+    padding-right: 20px;
+    padding-top: 0cm;
+
+}
+.bt1{
+    padding-left: 2cm;
+}
+.foot{
+    color: white;
+    
+}
+.para{
+    font-size: 20px;
+    align-content: center;
+    padding-left: 2cm;
+    padding-top: 2cm;
+}
+#pi{
+    font-size: 2cm;
+    font-family: 'Merienda One', cursive;
+}
+#gre{
+    font-size: 13px;
+    font-family: 'Merienda One', cursive;
+}
+.bs{
+    padding-left: 11cm;
+    padding-right: 11cm;
+}
+.ht{
+    padding-left: 5.1cm;
+}
+.btab{
+    width: 100%;
+    color: white;
+}

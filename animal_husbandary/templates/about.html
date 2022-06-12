@@ -1,0 +1,39 @@
+    {% extends "layout.html" %}
+    {% block title %}
+    about
+    {% endblock %}
+    {% block content %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=0.3">
+        <title>Document</title>
+    </head>
+    <body>
+        
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/about.css" %}">
+    <div class="container-fluid pic1">
+        <div class="row">
+            <div class="col-md-7">
+                <img src="{%static "media/farm1.jpg" %}" alt="GOLDEN OAK"
+                    style="width: 700px; border-radius: 6px; padding-top: 1cm;">
+            </div>
+            <div class="col-md-5">
+                <h1 class="headl">GOLDEN OAK FARM</h1>
+                <p id="pds">---------------------------------------------------------------------------</p>
+                <div class="aboul">
+                    <p>Animal husbandry is the branch of agriculture concerned with animals that are raised for meat, fibre, milk, or other products. It includes day-to-day care. 
+                        Golden Oak farms:
+                                        Is established in the year 2000 and for farm animals it provides facilities like proper shelter,appropriate food and water,medical facilities and good hygenic.
+                                
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+    {% endblock %}

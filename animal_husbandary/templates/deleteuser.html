@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block title %}
+user delete
+{% endblock %}
+
+{% block content %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $("#fo").submit(function(e){
+        e.preventDefault()
+
+         em = $("#em").val()
+        
+
+        $.get("http://127.0.0.1:8000/delr/",{em:em}).done(function(data)
+        {
+            
+            
+            $("body").html(data)
+            alert("Customer data has been deleted")
+            
+           
+        });
+       
+    });
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+{%load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet"> 
+<!-- font -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=0.3">
+ <title>deleteuser</title>
+</head>
+<body>
+<br>
+ <div class="container">
+ <h1 style="font-size: 2cm; text-align:center;font-family:TIMES NEW ROMAN;">DELETE PAGE </h1>
+ <br>
+ <h2 style="font-size: 1.5cm; text-align:center;font-family: 'Patrick Hand', cursive;">Enter the Email of the Customer</h2> <br> 
+ <div class="container">
+ <form id="fo" style="margin-left:2cm;" class="row">
+ <input type="email" placeholder="Customer Email" id="em" class="form-control col" style="padding-right: 4cm; font-size:35px; border-radius:10px; "> 
+ <div class="row" style="padding-top:2cm;">
+ <input type="submit" class="button btn-dark" value="SUBMIT" style="font-size: 30px;  margin-left:10px; font-family:'Lucida Sans ';font-weight:bold; border-radius:2cm;" >
+ </div>
+ </form>
+ </div>
+ </div>
+</body>
+<br>
+<br>
+<br>
+<br><br><br>
+</html>
+
+{% endblock %}

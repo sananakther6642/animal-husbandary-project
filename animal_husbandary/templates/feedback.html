@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block title %}
+feedback
+{% endblock %}
+{% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+    $("#formf").submit(function(e){
+        e.preventDefault()
+
+        var inpn = $(".inpn").val()
+        var inpem = $(".inpem").val()
+        var inptet = $(".inptet").val()
+        var inptet1 = $(".inptet1").val()
+
+        $.get("http://127.0.0.1:8000/fd/",{inpn:inpn,inpem:inpem,inptet:inptet,inptet1:inptet1}).done(function(data)
+        {
+            
+            
+            $("body").html(data)
+            alert('success')
+           
+        });
+       
+    });
+});
+
+</script>
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<link rel="stylesheet" type="text/css" href="{% static "css/feedback.css" %}">
+<link rel="stylesheet" type="text/css" href="{% static "css/home.css" %}">
+
+<div class="fimgs">
+    <img src="{%static "media/feed.png" %}" alt="feedback">
+</div>
+
+
+<div class="k">
+
+    <form  class="container formsa" id="formf">
+
+        <div class="name-fo">
+            <label for="name">Name :</label>
+            <input type="text" name="s" class="inpn">
+        </div>
+        <br>
+        <div class="ema-fo">
+            <label for="emai">Email :</label>
+            <input type="email" name="b" class="inpem">
+        </div>
+        <br>
+        <div class="text-fo">
+            <p id="sug">Suggestions :</p>
+            <textarea name="te"  cols="24" rows="4" class="inptet"></textarea>
+        </div>
+        <br>
+        <div class="text-imp">
+            <p id="sug">Improvements : </p>
+            <textarea name="te"  cols="24" rows="4" class="inptet1"></textarea>
+        </div>
+        <br>
+        
+        <div class="buttp">
+            <input type="submit" value="SUBMIT" class="butto2 btn btn-dark">
+        </div>
+
+
+    </form>
+
+</div>
+</body>
+</html>
+{% endblock %}
+
+       

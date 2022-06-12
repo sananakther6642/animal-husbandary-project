@@ -1,0 +1,103 @@
+{% extends "layout1.html" %}
+{% block title %}
+vaccination
+{% endblock %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$('#vacfor').submit(function(e){
+   e.preventDefault()
+   var vaid = $(".vaid").val()
+   var rms = $(".rms").val()
+   var da = $(".da").val()
+   var anid = $(".anid").val()
+
+   $.get("http://127.0.0.1:8000/vack",{vaid:vaid,anid:anid,rms:rms,da:da}).done(function(data){
+
+    $('body').html(data)
+    alert('successfully stored')
+ 
+   });
+   
+
+
+});
+});
+</script>
+
+
+
+
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.3">
+
+    <title>Document</title>
+</head>
+
+
+<!-- CSS INDEX -->
+<link rel="stylesheet" type="text/css" href="{%static "css/home.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "css/about.css" %}">
+<link rel="stylesheet" type="text/css" href="{%static "css/vaccination.css"%}">
+
+<br>
+<br>
+<body>
+<div class="back">
+    <h1 id="header-mous">VACCINATION...</h1>
+    <br>
+    <br>
+    <form class="row g-3 container" style="margin-left:450px" id="vacfor">
+        <div class="col-md-6">
+            <label for="inputname" class="form-label"style="font-weight: bold;">Vaccination ID :</label>
+            <input type="text" class="form-control vaid">
+        </div><br>
+        <div class="col-md-6">
+            <label for="inputname" class="form-label"style="font-weight: bold;">Animal ID :</label>
+            <input type="text" class="form-control anid"  >
+        </div><br>
+        <div class="col-md-6">
+            <label for="inputname" class="form-label"style="font-weight: bold;">Remarks :</label>
+            <input type="text" class="form-control rms"  >
+        </div><br>
+        <div class="col-md-6">
+            <label for="inputname" class="form-label"style="font-weight: bold;">Date of Vaccination :</label>
+            <input type="date" class="form-control da"  >
+        </div><br>
+        
+  
+
+        
+        <br>
+        <div class="col-md-8">
+            <br>
+            <br>
+            <input type="submit" value="SUBMIT" class="btn btn-secondary"  style="padding-left: 5.5cm;padding-right: 5.5cm; font-size:20px;">
+
+        </div>
+
+    </form>
+</div>
+
+
+<br>
+<br>
+</body>
+</html>
+{% endblock %}
+
+
+
+
+

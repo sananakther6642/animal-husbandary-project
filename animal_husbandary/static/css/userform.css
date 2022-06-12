@@ -1,0 +1,129 @@
+/* -------------FONT LINKS------------------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yuji+Mai&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+
+/* -----------------------------------------------------------------------------------------------*/
+
+
+
+
+
+.login-header{
+    font-size: 2.4cm;
+    font-style:normal;
+    font-family: 'Merienda One', cursive;
+    padding-left: 15cm;
+    padding-top: 50px;
+    color: black;
+    
+}
+.input-em {
+    color:black;
+    padding-top: 0 cm;
+    font-size: 24px;
+    font-family: 'Spectral', serif;
+    font-weight: bolder;
+  
+}
+.input-pas{
+    color: black;
+    padding-top: 1.5cm;
+    padding-left: 1.4cm;
+    font-size: 24px;
+    font-family: 'Spectral', serif;
+    padding-bottom: 1.5cm;
+    font-weight: bold;
+}
+.butto{
+    padding-left: 3cm;
+    padding-right: 3cm;
+    background-color: black;
+    color:white;
+    
+}
+.buttod{
+ padding-left: 3cm;
+    margin-top: -1cm;
+
+ font-weight: bold;
+ 
+
+
+}
+.ima{
+    padding-left: 1cm;
+    padding-top: 2cm;
+    padding-right: 0;
+}
+.fork{
+
+    padding-left: 11cm;
+    padding-top: 1cm;
+    padding-right: 6cm;
+    padding-bottom: 5cm;
+
+}
+input[type=email]{
+    
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    border-style: outset;
+    padding-top: 6px;
+    
+}
+input[type=password]{
+    
+    border-color:rgb(0, 0, 0);
+    border-width: 5px;
+    border-style: outset;
+    padding-top: 7px;
+    
+}
+.bg-img{
+    background-image: url('/static/media/farm4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: fit-content;
+}
+.not{
+    padding-top: 30px;
+    font-size: 24px;
+    margin-left: 2cm;
+    color:black;
+    font-weight: bolder;
+    
+}
+.ca{
+    font-size: 20px;
+    margin-left: 5m;
+    margin-top:-2cm;
+    font-weight: bolder;
+}
+.s{
+    padding-top: 3cm;
+}
+
+
+.navbar-an{
+    float: right;
+    padding-top: 1cm;
+    padding-right:0cm;
+      
+      
+   }
+  
