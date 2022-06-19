@@ -8,4 +8,4 @@ python manage.py runserver
 django python
 
 
-#requirements commands
+
